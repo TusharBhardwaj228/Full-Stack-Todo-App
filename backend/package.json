@@ -1,0 +1,22 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "This is a simple todo app based on CRUD functionality.",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon index.js"
+  },
+  "author": "Tushar Bhardwaj",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.5.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
