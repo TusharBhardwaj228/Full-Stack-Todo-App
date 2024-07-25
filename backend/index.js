@@ -33,6 +33,9 @@ app.get('/todos', async(req,res)=>{
   res.status(401).json({msg:"something went wrong"});
 });
 
+app.put('/todo', (req,res)=>{
+  
+})
 
 
 app.listen(3000);
