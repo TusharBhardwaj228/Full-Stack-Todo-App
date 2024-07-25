@@ -25,7 +25,7 @@ app.post("/todo", async(req,res)=>{
 
 //to get all todos
 app.get('/todos', async(req,res)=>{
-  const data = await todo.find({});
+  const data = await todo.find();
   if(data){
     res.status(200).json(data);
     return;
