@@ -33,9 +33,25 @@ app.get('/todos', async(req,res)=>{
   res.status(401).json({msg:"something went wrong"});
 });
 
-app.put('/todo', (req,res)=>{
-  
-})
+app.put('/completed', async(req,res)=>{
+  const updateData = req.body;
+  console.log(updateData);
+  const parseUpdateData = updatetodo.safeParse(updateData);
+  if(!parseUpdateData.success){
+    res.status(401).json({msg:"Please put id in string"});
+    return;
+  }
+  const setData = await todo.findOneAndUpdate({
+    _id:updateData.id
+  },{
+    completed:true
+  });
+  if(setData){
+    res.status(200).json({msg:"updated successfully."});
+    return;
+  }
+  res.status(401).json({msg:"something went wrong."})
+});
 
 
 app.listen(3000);
